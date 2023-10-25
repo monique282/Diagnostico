@@ -1,0 +1,144 @@
+<html>
+
+<body>
+    <script>
+
+        var DiminuiçãoDeForçaDeumladoDoCorpo = "";
+        var ContraçãoLabial = "";
+        var PerdaDeCampoVisual = "";
+        var ConfusãoMental = "";
+        var DorDeCabeça = "";
+        var Tontura = "";
+        var Idade = "";
+        var AtividadeFisica = "";
+        var HistoricoFamiliar = "";
+        var ProblemasCardiacos = "";
+        var Diagnostico = "";
+        var FazerDeNovo = "";
+
+        DiminuiçãoDeForçaDeumladoDoCorp();
+
+        function DiminuiçãoDeForçaDeumladoDoCorp() {
+            DiminuiçãoDeForçaDeumladoDoCorpo = parseInt(prompt("Está perdendo força de um lado do corpo ? / 1 = sim , 0 = não"))
+            if (DiminuiçãoDeForçaDeumladoDoCorpo !== 0 && DiminuiçãoDeForçaDeumladoDoCorpo !== 1) {
+                DiminuiçãoDeForçaDeumladoDoCorp();
+            } else {
+                ContraçãoLabia();
+            };
+        };
+
+        function ContraçãoLabia() {
+            ContraçãoLabial = parseInt(prompt("Está tendo contrações labiais ?  / 1 = sim , 0 = não  "));
+            if (ContraçãoLabial !== 0 && ContraçãoLabial !== 1) {
+                ContraçãoLabia();
+            } else {
+                PerdaDeCampoVisua();
+            };
+        };
+
+        function PerdaDeCampoVisua() {
+            PerdaDeCampoVisual = parseInt(prompt("Está perdendo parcialmente sua visão ? / 1 = sim , 0 = não "))
+            if (PerdaDeCampoVisual !== 0 && PerdaDeCampoVisual !== 1) {
+                PerdaDeCampoVisua();
+            } else {
+                ConfusãoMenta();
+            };
+        };
+
+        function ConfusãoMenta() {
+            ConfusãoMental = parseInt(prompt("Está tendo confusão mental ?/ 1 = sim , 0 = não  "))
+            if (ConfusãoMental !== 0 && ConfusãoMental !== 1) {
+                ConfusãoMenta()
+            } else {
+                DorDeCabeç();
+            };
+        };
+
+        function DorDeCabeç() {
+            DorDeCabeça = parseInt(prompt("Está tendo dor de cabeça intensa?/ 1 = sim , 0 = não"));
+            if (DorDeCabeça !== 0 && DorDeCabeça !== 1) {
+                DorDeCabeç();
+            } else {
+                Tontur();
+            };
+        };
+
+        function Tontur() {
+            Tontura = parseInt(prompt("Está sentindo tonturas?/ 1 = sim , 0 = não"));
+            if (Tontura !== 0 && Tontura !== 1) {
+                Tontur();
+            } else {
+                Idad();
+            };
+        };
+
+        function Idad() {
+            Idade = parseInt(prompt("Tem 50 anos ou mais?/ 1 = sim , 0 = não"));
+            if (Idade !== 0 && Idade !== 1) {
+                Idad();
+            } else {
+                AtividadeFisic();
+            };
+        };
+
+        function AtividadeFisic() {
+            AtividadeFisica = parseInt(prompt("Você pratica atividade física? -1 = sim , 1 = não"));
+            if (AtividadeFisica !== -1 && AtividadeFisica !== 1) {
+                AtividadeFisic();
+            } else {
+                HistoricoFamilia();
+            };
+        };
+
+        function HistoricoFamilia() {
+            HistoricoFamiliar = parseInt(prompt("Alguém da sua família já teve um AVC? 1 = sim , -1 = não"));
+            if (HistoricoFamiliar !== -1 && HistoricoFamiliar !== 1) {
+                HistoricoFamilia();
+            } else {
+                ProblemasCardiaco();
+            };
+        };
+
+        function ProblemasCardiaco() {
+            ProblemasCardiacos = parseInt(prompt("Você ou sua família possuem histórico de problemas cardíacos?/ 1 = sim , -1 = não"));
+            if (ProblemasCardiacos !== -1 && ProblemasCardiacos !== 1) {
+                ProblemasCardiaco();
+            } else {
+                Diagnostic();
+            };
+        };
+
+        function Diagnostic() {
+            Diagnostico = DiminuiçãoDeForçaDeumladoDoCorpo + ContraçãoLabial + ConfusãoMental + PerdaDeCampoVisual + Idade + AtividadeFisica + HistoricoFamiliar + ProblemasCardiacos + DorDeCabeça + Tontura;
+            Resultado();
+        };
+
+        function Resultado() {
+            if (Diagnostico >= 3) {
+                alert("Alta probabilidade de ser um Acidente vascular cerebral, vá ao médico imediatamente! O número do SAMU é 192");
+                FazerDeNov();
+            } else if (Diagnostico === 0) {
+                alert("Sem risco de Acidente Vascular Cerebral!");
+                FazerDeNov();
+            } else {
+                alert("Baixo Risco de Acidente vascular cerebral, recomenda-se ir ao médico verificar.");
+                FazerDeNov();
+            };
+        };
+
+        function FazerDeNov() {
+            FazerDeNovo = parseInt(prompt("Você deseja fazer o teste novamente?/ 1 = sim , 0 = não"));
+            if (FazerDeNovo !== 1 && FazerDeNovo !== 0) {
+                FazerDeNov();
+            } else if (FazerDeNovo === 1) {
+                Diagnostico = "";
+                DiminuiçãoDeForçaDeumladoDoCorp();
+            } else if (FazerDeNovo === 0) {
+                alert("Teste finalizado");
+            }
+        };
+
+
+    </script>
+</body>
+</html>
